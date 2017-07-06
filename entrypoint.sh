@@ -7,5 +7,6 @@ if [ ! -f /privatebin/cfg/conf.ini ]; then
 	cp /privatebin/conf.ini.sample /privatebin/cfg/conf.ini
 fi
 
-chown -R privatebin:privatebin /privatebin /var/run/php-fpm.sock /var/lib/nginx /tmp
+chown -R privatebin:privatebin /privatebin /var/run/php-fpm.sock /var/lib/nginx /tmp /var/tmp/nginx
 supervisord -c /usr/local/etc/supervisord.conf
+
