@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Jeroen Geusebroek <me@jeroengeusebroek.nl>
 
-ARG VERSION=1.1
+ARG VERSION=1.1.1
 
 ENV GID=991 UID=991
 
@@ -23,7 +23,7 @@ RUN apk -U add \
  && tar xvzf privatebin.tar.gz --strip 1 \
  && rm privatebin.tar.gz \
 
- && mv cfg/conf.ini.sample /privatebin \
+ && mv cfg/conf.sample.php /privatebin \
  && apk del tar ca-certificates curl libcurl \
  && rm -f /var/cache/apk/*
 

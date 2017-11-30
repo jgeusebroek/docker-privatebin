@@ -4,7 +4,7 @@ addgroup -g ${GID} privatebin && adduser -h /privatebin -s /bin/sh -D -G private
 touch /var/run/php-fpm.sock
 
 if [ ! -f /privatebin/cfg/conf.ini ]; then
-	cp /privatebin/conf.ini.sample /privatebin/cfg/conf.ini
+	cp /privatebin/conf.sample.php /privatebin/cfg/conf.php
 fi
 
 chown -R privatebin:privatebin /privatebin /var/run/php-fpm.sock /var/lib/nginx /tmp /var/tmp/nginx
