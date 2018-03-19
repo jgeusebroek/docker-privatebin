@@ -13,16 +13,16 @@ RUN apk -U add \
     php7-mcrypt \
     php7-json \
     php7-zlib \
+    php7-pdo \
+    php7-pdo_mysql \
     supervisor \
     tini \
     ca-certificates \
     tar \
-
  && mkdir privatebin && cd privatebin \
  && curl -L -o privatebin.tar.gz https://github.com/PrivateBin/PrivateBin/archive/$VERSION.tar.gz \
  && tar xvzf privatebin.tar.gz --strip 1 \
  && rm privatebin.tar.gz \
-
  && mv cfg/conf.sample.php /privatebin \
  && apk del tar ca-certificates curl libcurl \
  && rm -f /var/cache/apk/*
