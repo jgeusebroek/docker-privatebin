@@ -12,11 +12,9 @@ RUN apk -U add \
     php7-gd \
     php7-mcrypt \
     php7-json \
-    php7-zlib \
     php7-pdo \
     php7-pdo_mysql \
     supervisor \
-    tini \
     ca-certificates \
     tar \
  && mkdir privatebin && cd privatebin \
@@ -32,10 +30,9 @@ COPY files/php-fpm.conf /etc/php7/php-fpm.conf
 COPY files/supervisord.conf /usr/local/etc/supervisord.conf
 COPY entrypoint.sh /
 
-RUN chmod +x /entrypoint.sh
-
-VOLUME [ "/privatebin/data", "/privatebin/cfg" ]
+# mark dirs as volumes that need to be writable, allows running the container --read-only
+VOLUME [ "/privatebin/data", "/privatebin/cfg", "/etc", "/tmp", "/var/tmp", "/run", "/var/log" ]
 
 EXPOSE 80
 LABEL description "PrivateBin is a minimalist, open source online pastebin where the server has zero knowledge of pasted data."
-CMD ["/sbin/tini","--","/entrypoint.sh"]
+CMD ["/entrypoint.sh"]
