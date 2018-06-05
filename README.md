@@ -6,6 +6,7 @@ A tiny image running [alpine](https://github.com/gliderlabs/docker-alpine) Linux
 ## Usage
 
 	docker run --restart=always -d \
+		--read-only
 		-p 0.0.0.0:80:80 \
 		--hostname=privatebin \
 		--name=privatebin \
@@ -13,7 +14,7 @@ A tiny image running [alpine](https://github.com/gliderlabs/docker-alpine) Linux
 		-v /<host_cfg_directory>:/privatebin/cfg \
 		jgeusebroek/privatebin
 
-On first run it will copy the sample config file if there isn't a config file already.
+On first run it will copy the sample config file, if there isn't a config file already.
 
 ## Optional environment variables
 
