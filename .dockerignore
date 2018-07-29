@@ -1,0 +1,10 @@
+# Docs
+README.md
+LICENSE
+
+# build
+build.sh
+buildNoCache.sh
+
+# Git
+.git/
