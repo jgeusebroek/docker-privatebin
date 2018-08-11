@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Jeroen Geusebroek <me@jeroengeusebroek.nl>
 
-ARG VERSION=1.2
+ARG VERSION=1.2.1
 
 ENV GID=991 UID=991
 
@@ -20,7 +20,7 @@ RUN apk -U add \
  && mkdir -p privatebin/data \
  && export GNUPGHOME="$(mktemp -d)" \
  && gpg2 --list-public-keys || /bin/true \
- && curl -s https://privatebin.info/key/security.asc | gpg2 --import - \
+ && curl -s https://privatebin.info/key/release.asc | gpg2 --import - \
  && curl -Lso privatebin.tar.gz.asc https://github.com/PrivateBin/PrivateBin/releases/download/$VERSION/PrivateBin-$VERSION.tar.gz.asc \
  && curl -Lso privatebin.tar.gz https://github.com/PrivateBin/PrivateBin/archive/$VERSION.tar.gz \
  && gpg2 --verify privatebin.tar.gz.asc \
