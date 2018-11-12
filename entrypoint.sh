@@ -7,5 +7,5 @@ if [ ! -f /privatebin/cfg/conf.php ]; then
 	cp /privatebin/conf.sample.php /privatebin/cfg/conf.php
 fi
 
-chown -R privatebin:privatebin /privatebin/data
+chown -R privatebin:privatebin /privatebin/data /var/tmp/nginx
 supervisord -c /usr/local/etc/supervisord.conf
