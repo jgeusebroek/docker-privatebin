@@ -1,7 +1,7 @@
 [![](https://images.microbadger.com/badges/image/jgeusebroek/privatebin.svg)](https://microbadger.com/images/jgeusebroek/privatebin "Get your own image badge on microbadger.com")
 # Docker Privatebin image
 
-A tiny image running [alpine](https://github.com/gliderlabs/docker-alpine) Linux and [Privatebin](https://github.com/PrivateBin/PrivateBin).
+A tiny image running [alpine](https://github.com/gliderlabs/docker-alpine) Linux and [PrivateBin](https://github.com/PrivateBin/PrivateBin).
 
 ## Usage
 
