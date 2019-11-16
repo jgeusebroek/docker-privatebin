@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Jeroen Geusebroek <me@jeroengeusebroek.nl>
 
-ARG VERSION=1.3
+ARG VERSION=1.3.1
 
 ENV GID=991 UID=991
 
