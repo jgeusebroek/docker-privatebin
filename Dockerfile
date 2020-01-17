@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Jeroen Geusebroek <me@jeroengeusebroek.nl>
 
-ARG VERSION=1.3.1
+ARG VERSION=1.3.2
 
 ENV GID=991 UID=991
 
@@ -41,8 +41,8 @@ COPY files/php-fpm.conf /etc/php7/php-fpm.conf
 COPY files/supervisord.conf /usr/local/etc/supervisord.conf
 COPY entrypoint.sh /
 
-# mark dirs as volumes that need to be writable, allows running the container --read-only
-VOLUME [ "/privatebin/data", "/privatebin/cfg", "/etc", "/tmp", "/var/tmp", "/run", "/var/log" ]
+# Mark dirs as volumes that need to be writable, allows running the container --read-only
+VOLUME [ "/privatebin/data", "/privatebin/cfg", "/etc", "/tmp", "/var/lib/nginx/tmp", "/run", "/var/log" ]
 
 EXPOSE 80
 LABEL description "PrivateBin is a minimalist, open source online pastebin where the server has zero knowledge of pasted data."
