@@ -13,6 +13,7 @@ RUN apk -U add \
     php7-json \
     php7-pdo \
     php7-pdo_mysql \
+    php7-pdo_pgsql \
     supervisor \
     ca-certificates \
     tar \
