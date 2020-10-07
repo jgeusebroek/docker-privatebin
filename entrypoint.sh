@@ -1,5 +1,8 @@
 #!/bin/sh
 
+chmod o+rx /var/lib/nginx
+chmod og+rx /var/lib/nginx/tmp
+
 addgroup -g ${GID} privatebin && \
 adduser -h /privatebin -H -s /bin/sh -D -G privatebin -u ${UID} privatebin
 
