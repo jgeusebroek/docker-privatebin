@@ -35,7 +35,8 @@ RUN apk -U add \
  && mv vendor /privatebin \
  && sed -i "s#define('PATH', '');#define('PATH', '/privatebin/');#" index.php \
  && apk del tar ca-certificates curl gnupg \
- && rm -f /privatebin.tar.gz* *.md /var/cache/apk/*
+ && rm -f /privatebin.tar.gz* *.md /var/cache/apk/* \
+ && rm /etc/nginx/conf.d/default.conf
 
 COPY files/nginx.conf /etc/nginx/nginx.conf
 COPY files/php-fpm.conf /etc/php7/php-fpm.conf
