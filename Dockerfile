@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.15
 MAINTAINER Jeroen Geusebroek <me@jeroengeusebroek.nl>
 
 ARG VERSION=1.4.0
