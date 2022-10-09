@@ -1,4 +1,4 @@
-FROM alpine:3.15
+FROM alpine:latest
 MAINTAINER Jeroen Geusebroek <me@jeroengeusebroek.nl>
 
 ARG VERSION=1.4.0
@@ -8,12 +8,12 @@ ENV GID=991 UID=991
 RUN apk -U add \
     curl \
     nginx \
-    php7-fpm \
-    php7-gd \
-    php7-json \
-    php7-pdo \
-    php7-pdo_mysql \
-    php7-pdo_pgsql \
+    php8-fpm \
+    php8-gd \
+    php8-json \
+    php8-pdo \
+    php8-pdo_mysql \
+    php8-pdo_pgsql \
     supervisor \
     ca-certificates \
     tar \
@@ -38,7 +38,7 @@ RUN apk -U add \
  && rm -f /privatebin.tar.gz* *.md /var/cache/apk/*
 
 COPY files/nginx.conf /etc/nginx/nginx.conf
-COPY files/php-fpm.conf /etc/php7/php-fpm.conf
+COPY files/php-fpm.conf /etc/php8/php-fpm.conf
 COPY files/supervisord.conf /usr/local/etc/supervisord.conf
 COPY entrypoint.sh /
 
