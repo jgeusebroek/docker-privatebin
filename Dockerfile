@@ -1,19 +1,19 @@
 FROM alpine:latest
 MAINTAINER Jeroen Geusebroek <me@jeroengeusebroek.nl>
 
-ARG VERSION=1.4.0
+ARG VERSION=1.6.2
 
 ENV GID=991 UID=991
 
 RUN apk -U add \
     curl \
     nginx \
-    php8-fpm \
-    php8-gd \
-    php8-json \
-    php8-pdo \
-    php8-pdo_mysql \
-    php8-pdo_pgsql \
+    php82-fpm \
+    php82-gd \
+    php82-json \
+    php82-pdo \
+    php82-pdo_mysql \
+    php82-pdo_pgsql \
     supervisor \
     ca-certificates \
     tar \
