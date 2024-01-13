@@ -38,7 +38,7 @@ RUN apk -U add \
  && rm -f /privatebin.tar.gz* *.md /var/cache/apk/*
 
 COPY files/nginx.conf /etc/nginx/nginx.conf
-COPY files/php-fpm.conf /etc/php8/php-fpm.conf
+COPY files/php-fpm.conf /etc/php82/php-fpm.conf
 COPY files/supervisord.conf /usr/local/etc/supervisord.conf
 COPY entrypoint.sh /
 
